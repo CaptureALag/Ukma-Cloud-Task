@@ -6,6 +6,8 @@
 .idea/**/tasks.xml
 .idea/dictionaries
 .idea/*
+target/*
+.settings/*
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
