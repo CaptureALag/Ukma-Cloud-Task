@@ -30,4 +30,8 @@ public class HelloWorldEndpoints {
     public HelloClass sayHelloByName (@Named("name") String name) {
         return new HelloClass(name);
     }
+
+    @ApiMethod(name = "reverseName", path = "reverseName", httpMethod = HttpMethod.GET)
+
+    public ReverseClass reverseName(@Named("name") String name) { return new ReverseClass(name); }
 }

@@ -52,6 +52,10 @@ function enableButtons () {
 	
 	// Update the button label now that the button is active
 	btn.value="Click me for a personal greeting";
+
+	btn = document.getElementById("input_reverse_name");
+	btn.onclick=function(){reverseName();}
+	btn.value="Reverse name"
 }
 
 /*
@@ -81,12 +85,19 @@ function greetByName () {
 	request.execute(sayHelloCallback);
 }
 
+function reverseName() {
+    var name = document.getElementById("name_field").value;
+    var request = gapi.client.helloworldendpoints.reverseName({'name': name});
+	request.execute(sayHelloCallback);
+}
+
 // Process the JSON response
 // In this case, just show an alert dialog box
 // displaying the value of the message field in the response
 function sayHelloCallback (response) {
 	alert(response.message);	
 }
+
 
 
 
